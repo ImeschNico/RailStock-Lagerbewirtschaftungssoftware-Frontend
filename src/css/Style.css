@@ -231,3 +231,39 @@
   background-color: #1a1a1a;
   color: #fdfdfd;
 }
+
+/* Filter anwenden Button */
+.apply-filter-button {
+  display: block;
+  margin: 16px auto 0 auto;
+  width: 100%;
+  background-color: #2196f3;
+  color: #fdfdfd;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: bold;
+  text-align: center;
+}
+
+.apply-filter-button:hover {
+  background-color: #2196f3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.apply-filter-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Markierung für aktive Filter */
+.filter-container select.active-filter {
+  border: 2px solid #2196f3;
+  background-color: #222;
+  color: #fdfdfd;
+  font-weight: bold;
+}

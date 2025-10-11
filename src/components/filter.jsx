@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Dropdown } from "./dropdown";
 import "../css/Style.css";
+import { Button } from "./button";
 
 export const Filter = ({ onFilterChange }) => {
   const [epoche, setEpoche] = useState("");
@@ -9,7 +10,7 @@ export const Filter = ({ onFilterChange }) => {
   const [typ, setTyp] = useState("");
   const [stromart, setStromart] = useState("");
 
-  const handleChange = () => {
+  const apllyFilter = () => {
     onFilterChange({ epoche, spur, betriebsart, typ, stromart });
   };
 
@@ -18,47 +19,43 @@ export const Filter = ({ onFilterChange }) => {
       <Dropdown
         label="Epoche"
         value={epoche}
-        onChange={(v) => {
-          setEpoche(v);
-          handleChange();
-        }}
+        onChange={setEpoche}
         options={["I", "II", "III", "IV", "V", "VI"]}
+        className={epoche ? "active-filter" : ""}
       />
       <Dropdown
         label="Spur"
         value={spur}
-        onChange={(v) => {
-          setSpur(v);
-          handleChange();
-        }}
+        onChange={setSpur}
         options={["Z", "N", "TT", "H0", "0"]}
+        className={spur ? "active-filter" : ""}
       />
       <Dropdown
         label="Betriebsart"
         value={betriebsart}
-        onChange={(v) => {
-          setBetriebsart(v);
-          handleChange();
-        }}
+        onChange={setBetriebsart}
         options={["Digital", "Analog", "MFX"]}
+        className={betriebsart ? "active-filter" : ""}
       />
       <Dropdown
         label="Typ"
         value={typ}
-        onChange={(v) => {
-          setTyp(v);
-          handleChange();
-        }}
+        onChange={setTyp}
         options={["Dampf", "Diesel", "Elektro"]}
+        className={typ ? "active-filter" : ""}
       />
       <Dropdown
         label="Stromart"
         value={stromart}
-        onChange={(v) => {
-          setStromart(v);
-          handleChange();
-        }}
+        onChange={setStromart}
         options={["Gleichstrom", "Wechselstrom"]}
+        className={stromart ? "active-filter" : ""}
+      />
+
+      <Button
+        className="apply-filter-button"
+        text="Filter anwenden"
+        onAnswerClick={apllyFilter}
       />
     </div>
   );

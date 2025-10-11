@@ -11,16 +11,16 @@ export const FilterListe = () => {
 
   const [artNumber, setArtNumber] = useState("");
   const [hersteller, setHersteller] = useState("");
-  const [modell, setModell] = useState("");
+  const [bezeichnung, setBezeichnung] = useState("");
 
-  const handleSearch = async () => {
+  const handleSearch = async (searchParams) => {
     try {
-      const searchParams = {
+      const params = searchParams ?? {
         artNumber,
         modell,
-        hersteller,
+        herstellerName: hersteller,
       };
-      const data = await fetchSearchFilter(searchParams);
+      const data = await fetchSearchFilter(params);
       setLoks(data);
     } catch (err) {
       console.error(err);
@@ -29,11 +29,7 @@ export const FilterListe = () => {
   };
 
   const handleSearchFieldChange = (field) => (value) => {
-    let params = {
-      artNumber,
-      modell,
-      herstellerName: hersteller,
-    };
+    let params = {};
 
     switch (field) {
       case "hersteller":
@@ -44,9 +40,9 @@ export const FilterListe = () => {
         setArtNumber(value);
         params.artNumber = value;
         break;
-      case "modell":
-        setModell(value);
-        params.modell = value;
+      case "bezeichnung":
+        setBezeichnung(value);
+        params.bezeichnung = value;
         break;
       default:
         break;
@@ -77,8 +73,8 @@ export const FilterListe = () => {
           onSearch={handleSearchFieldChange("artNumber")}
         />
         <SearchField
-          label="Modell"
-          onSearch={handleSearchFieldChange("modell")}
+          label="Modellbezeichnung z.B BR102"
+          onSearch={handleSearchFieldChange("bezeichnung")}
         />
       </div>
 
