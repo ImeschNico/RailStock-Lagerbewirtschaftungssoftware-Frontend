@@ -19,7 +19,7 @@ Das Frontend kommuniziert über die REST-API mit dem [RailStock Backend](https:/
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 ### Voraussetzungen
 - Node.js 20+
@@ -58,6 +58,16 @@ Das Frontend kommuniziert über die REST-API mit dem [RailStock Backend](https:/
 
 - Bestandsverwaltung – Anzeigen, Transfer zwischen Lagerplätzen, Anlegen, Bearbeiten
 
+--- 
+
+## Mock-Ups 
+
+![](src/docs/Mockup1.png)
+![](src/docs/Mockup2.png)
+![](src/docs/Mockup3.png)
+
+**Hinweis:** Diese Mock-Ups wurden als Inspiration erstellt und dienen als konzeptionelle Vorlagen.  
+Der aktuelle Entwicklungsstand kann daher von diesen Darstellungen abweichen.
 
 
 
