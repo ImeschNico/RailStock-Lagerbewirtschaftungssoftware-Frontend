@@ -1,21 +1,64 @@
-<<<<<<< HEAD
-# React + Vite
+# RailStock – Lagerbewirtschaftungssoftware (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dieses Repository enthält das **Frontend der RailStock-Lagerbewirtschaftungssoftware**.  
+Es stellt die Benutzeroberfläche bereit, über die Anwender Lokomotiven, Lagerplätze und Bestände verwalten können.  
+Das Frontend kommuniziert über die REST-API mit dem [RailStock Backend](https://github.com/ImeschNico/RailStock-Lagerbewirtschaftungssoftware-Backend).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologien
 
-## React Compiler
+- **React 19.1.1**
+- – Moderne UI-Bibliothek für komponentenbasiertes Entwickeln  
+- **Vite 7.1.7**
+- – Schnelles Build-Tool und Dev-Server  
+- **React Router 7.9.2**
+- – Navigation zwischen Views    
+- **@vitejs/plugin-react 5.0.3**
+- – React-Support für Vite  
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ⚙️ Installation & Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# RailStock-Lagerbewirtschaftungssoftware-Frontend
-Frontend für RailStock-Lagerbewirtschaftungssoftware
->>>>>>> a71f7a016224257db8c7a507605a63880251c89a
+### Voraussetzungen
+- Node.js 20+
+- npm oder yarn
+
+### Schritte
+
+1. Repository klonen:
+   ```bash
+   git clone https://github.com/ImeschNico/RailStock-Lagerbewirtschaftungssoftware-Frontend.git
+
+2. In das Prohjektverzeichnis wechseln:
+   ```bash
+   cd RailStock-Lagerbewirtschaftungssoftware-Frontend
+
+3. Abhängigkeiten installieren:
+   ```bash
+   npm install
+
+4. Entwicklungsserver starten:
+   ```bash
+   npm run dev
+
+5. Das Frontend ist dann unter:
+   http://localhost:5173  verfügbar.
+
+---
+
+## Features
+
+- Dashboard – Übersicht über Lokomotiven, Lagerplätze und Bestände
+  
+- Lokomotivenverwaltung – Anzeigen, Anlegen, Bearbeiten, Löschen
+  
+- Lagerplatzverwaltung – Anzeigen, Anlegen, Bearbeiten, Löschen
+
+- Bestandsverwaltung – Anzeigen, Transfer zwischen Lagerplätzen, Anlegen, Bearbeiten
+
+
+
+
+
