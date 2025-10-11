@@ -19,7 +19,7 @@ Das Frontend kommuniziert über die REST-API mit dem [RailStock Backend](https:/
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 ### Voraussetzungen
 - Node.js 20+
