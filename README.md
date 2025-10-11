@@ -1,0 +1,2 @@
+# RailStock-Lagerbewirtschaftungssoftware-Frontend
+Frontend für RailStock-Lagerbewirtschaftungssoftware
