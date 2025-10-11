@@ -31,7 +31,7 @@ Das Frontend kommuniziert über die REST-API mit dem [RailStock Backend](https:/
    ```bash
    git clone https://github.com/ImeschNico/RailStock-Lagerbewirtschaftungssoftware-Frontend.git
 
-2. In das Prohjektverzeichnis wechseln:
+2. In das Projektverzeichnis wechseln:
    ```bash
    cd RailStock-Lagerbewirtschaftungssoftware-Frontend
 
