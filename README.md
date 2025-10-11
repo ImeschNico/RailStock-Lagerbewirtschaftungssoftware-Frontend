@@ -58,6 +58,11 @@ Das Frontend kommuniziert über die REST-API mit dem [RailStock Backend](https:/
 
 - Bestandsverwaltung – Anzeigen, Transfer zwischen Lagerplätzen, Anlegen, Bearbeiten
 
+--- 
+
+## Mock-Ups 
+
+!(src/docs/Mockup1.png)
 
 
 
