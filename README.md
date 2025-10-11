@@ -62,7 +62,7 @@ Das Frontend kommuniziert über die REST-API mit dem [RailStock Backend](https:/
 
 ## Mock-Ups 
 
-!(src/docs/Mockup1.png)
+![](src/docs/Mockup1.png)
 
 
 
