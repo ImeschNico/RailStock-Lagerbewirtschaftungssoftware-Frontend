@@ -1,3 +1,5 @@
+import { Lagerplatz } from "../Pages/Lagerplatz";
+
 const BASE_URL = "http://localhost:8080/api";
 
 export const fetchBestandByArtNumber = async (artNumber) => {
@@ -67,4 +69,16 @@ export const fetchSearchFilter = async (searchParams) => {
   const res = await fetch(`${BASE_URL}/loks/filter?${params.toString()}`);
   if (!res.ok) throw new Error("Fehler beim Aufrufen der Daten");
   return res.json();
+};
+
+export const createLagerplatz = async (regal, tablar) => {
+  const res = await fetch(`${BASE_URL}/lagerplatz/erstellen`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      regal,
+      tablar,
+    }),
+  });
+  return await res.json;
 };

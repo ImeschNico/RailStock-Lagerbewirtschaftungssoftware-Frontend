@@ -6,6 +6,7 @@ export const Navigation = () => {
     <nav className="nav-bar-top">
       <Link to="/">Home</Link>
       <Link to="/suche">Suche</Link>
+      <Link to="/lagerplatz">Lagerplatz</Link>
     </nav>
   );
 };

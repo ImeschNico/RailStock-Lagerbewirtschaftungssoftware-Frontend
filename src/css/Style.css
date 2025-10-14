@@ -267,3 +267,29 @@
   color: #fdfdfd;
   font-weight: bold;
 }
+/* Navbar Links fix und gleichmäßig verteilt */
+.nav-bar-top {
+  display: flex;
+  justify-content: center; /* Links zentrieren */
+  align-items: center;
+  gap: 2.5rem; /* Abstand zwischen Links */
+  position: fixed; /* bleibt immer oben */
+  top: 40px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 0 2rem;
+  z-index: 1000;
+}
+
+.nav-bar-top a {
+  flex-shrink: 0; /* verhindert, dass Links schrumpfen */
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+.app-header nav a:hover {
+  color: #2196f3;
+}

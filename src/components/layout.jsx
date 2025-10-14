@@ -7,17 +7,19 @@ export const Layout = () => {
     <div className="app">
       <header className="app-header">
         <Navigation />
-        <h1>RailStock</h1>
+        <h1 className="app-title">RailStock</h1>
       </header>
 
       <main className="layout-main-content">
-        <Outlet />
-
-        <footer className="layout-footer">
-          <p>© RailStock. All rights reserved</p>
-          <p>Made with ❤️ by Nico Imesch</p>
-        </footer>
+        <div className="page-container">
+          <Outlet />
+        </div>
       </main>
+
+      <footer className="layout-footer">
+        <p>© RailStock. All rights reserved</p>
+        <p>Made with ❤️ by Nico Imesch</p>
+      </footer>
     </div>
   );
 };
