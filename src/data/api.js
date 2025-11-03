@@ -82,3 +82,10 @@ export const createLagerplatz = async (regal, tablar) => {
   });
   return await res.json;
 };
+
+//Aufruf der Api mit allen Herstellern
+export const fetchHersteller = async () => {
+  const res = await fetch(`${BASE_URL}/hersteller`);
+  if (!res.ok) throw new Error("Fehler beim Laden der Hersteller")();
+  return res.json();
+};

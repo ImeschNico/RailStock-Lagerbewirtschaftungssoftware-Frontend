@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { Bestand } from "./Pages/Bestand";
 import { Suche } from "./Pages/Suche";
 import { Lagerplatz } from "./Pages/Lagerplatz";
+import { HerstellerBestand } from "./components/herstellerBestand";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/bestand/:lokId" element={<Bestand />} />
         <Route path="/suche" element={<Suche />} />
         <Route path="/lagerplatz" element={<Lagerplatz />} />
+        <Route path="/loks/filter" element={<HerstellerBestand />} />
       </Route>
     </Routes>
   );
