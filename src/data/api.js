@@ -89,3 +89,21 @@ export const fetchHersteller = async () => {
   if (!res.ok) throw new Error("Fehler beim Laden der Hersteller")();
   return res.json();
 };
+
+//Aufruf Bestand nach Hersteller
+export const fetchBestandByHersteller = async (herstellerName) => {
+  const res = await fetch(`${BASE_URL}/bestand/hersteller/${herstellerName}`);
+  if (!res.ok)
+    throw new Error("Fehler beim Lden des Bestandes dieses Herstellers");
+  return res.json();
+};
+
+//Neue Lok erstellen
+export const createLok = async (formData) => {
+  const res = await fetch(`${BASE_URL}/loks/admin/neu`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  });
+  return await res.json();
+};

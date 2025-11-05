@@ -270,28 +270,41 @@
 /* Navbar Links fix und gleichmäßig verteilt */
 .nav-bar-top {
   display: flex;
-  justify-content: center; /* Links zentrieren */
+  justify-content: center;
   align-items: center;
-  gap: 2.5rem; /* Abstand zwischen Links */
+  gap: 2.5rem;
   position: fixed; /* bleibt immer oben */
-  top: 40px;
+  top: 0;
   left: 0;
   right: 0;
   height: 60px;
   padding: 0 2rem;
   z-index: 1000;
+
+  /* Hintergrund als halbtransparenten Balken */
+  background-color: rgba(40, 40, 40, 0.85); /* schwarz mit 70% Deckkraft */
+  backdrop-filter: blur(6px); /* leichte Unschärfe für den Inhalt darunter */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* optional, feine Linie */
 }
 
 .nav-bar-top a {
-  flex-shrink: 0; /* verhindert, dass Links schrumpfen */
+  flex-shrink: 0;
   font-size: 1.2rem;
   font-weight: 600;
   color: white;
   text-decoration: none;
 }
 
-.app-header nav a:hover {
+.nav-bar-top a:hover {
   color: #2196f3;
+}
+
+/* Platz für die fixierte Navbar im Header */
+.app-header {
+  position: relative;
+  padding-top: 70px; /* Höhe der Navbar + etwas Abstand */
+  text-align: center;
+  color: white;
 }
 
 /* ==========================================
@@ -377,6 +390,44 @@
   .button-transfer {
     background-color: #2196f3;
   }
+
+  @media (prefers-color-scheme: light) {
+    .nav-bar-top {
+      background-color: rgba(255, 255, 255, 0.9); /* heller Balken */
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-bar-top a {
+      color: #111; /* dunkle Schrift im Light Mode */
+    }
+
+    .hersteller-container {
+      background-color: #f4f4f4; /* heller Hintergrund passend zum Light Mode */
+    }
+
+    .hersteller-card {
+      background-color: #ffffff; /* Karten heller, besser sichtbar */
+    }
+
+    .hersteller-card span {
+      color: #111; /* Name gut lesbar */
+    }
+    .app-header h1 {
+      color: #111; /* Titel sichtbar in Light Mode */
+    }
+
+    .hersteller-container {
+      background-color: #f4f4f4; /* heller Container */
+    }
+
+    .hersteller-card {
+      background-color: #ffffff; /* helle Karten */
+    }
+
+    .hersteller-card span {
+      color: #111; /* Name gut lesbar */
+    }
+  }
 }
 
 /* Container für das Hersteller-Grid */
@@ -434,4 +485,60 @@
   color: #fdfdfd;
   font-weight: 600;
   font-size: 0.95rem;
+}
+
+.lok-form {
+  max-width: 500px; /* kompakter */
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #111111; /* dunkler Hintergrund */
+  color: #ffffff; /* Schrift hell */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+
+.lok-form-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #f0f0f0;
+}
+
+.lok-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 Spalten für kürzere Höhe */
+  gap: 1rem;
+}
+
+.lok-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.lok-label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.lok-input {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #444444;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #222222;
+  color: #ffffff;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.lok-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.lok-form-button {
+  grid-column: span 2; /* Button über beide Spalten */
+  text-align: center;
+  margin-top: 1rem;
 }
