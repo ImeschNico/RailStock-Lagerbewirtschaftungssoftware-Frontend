@@ -34,7 +34,7 @@ export const Erstellen = () => {
             <input
               type="text"
               value={regal}
-              onChange={(e) => setRegal(e.target.value.toLocaleUpperCase())}
+              onChange={(e) => setRegal(e.target.value.toUpperCase())}
               placeholder="Regal (z. B. S01)"
               required
             />

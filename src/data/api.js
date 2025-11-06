@@ -107,3 +107,10 @@ export const createLok = async (formData) => {
   });
   return await res.json();
 };
+
+//Api aufruf zum sehen der Menge aller Bestände
+export const fetchGesamtBestand = async () => {
+  const res = await fetch(`${BASE_URL}/bestand/alle`);
+  if (!res.ok) throw new Error("Fehler beim Laden des Gesamtbesatdnes");
+  return res.json();
+};

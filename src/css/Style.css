@@ -624,3 +624,9 @@
   margin-top: 1rem;
   text-align: center; /* zentriert, wirkt sauberer */
 }
+
+.gesamt-bestand {
+  font-size: 1.5rem;
+  font-weight: "bold";
+  color: #00cc66;
+}

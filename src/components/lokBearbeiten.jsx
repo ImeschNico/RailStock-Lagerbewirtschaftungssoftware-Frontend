@@ -27,7 +27,7 @@ export const LokBearbeiten = () => {
   }, []);
   return (
     <div>
-      <h2>Lok bearbeiten/duplizieren:</h2>
+      <h2>Lok Bearbeiten/Duplizieren:</h2>
       <SearchField label="Artikel Nummer" onSearch={setArtNumber} />
 
       {!editOpen && <LokDetails artNumber={artNumber} onLoad={handleLoad} />}

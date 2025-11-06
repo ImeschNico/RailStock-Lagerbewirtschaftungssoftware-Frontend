@@ -30,10 +30,10 @@ export const BestandTabelle = ({ bestand, setBestand, lokId }) => {
           menge: Number(newMenge),
         });
 
-        // updatedItem ist das komplette Objekt aus deiner API
-        setBestand((prev) =>
-          prev.map((b) => (b.id === updatedItem.id ? updatedItem : b))
+        const refreshed = await fetchBestandByArtNumber(
+          currentItem.lok.artNumber
         );
+        setBestand(refreshed);
 
         setIsModalOpen(false);
       } catch (error) {
@@ -111,11 +111,14 @@ export const BestandTabelle = ({ bestand, setBestand, lokId }) => {
               onChange={(e) => setNewMenge(e.target.value)}
             />
             <div className="modal-buttons">
-              <Button text="Speichern" onAnswerClick={saveChanges} />
+              <Button
+                text="Speichern"
+                onAnswerClick={saveChanges}
+                className={"button-eingang"}
+              />
               <Button
                 text="Abbrechen"
                 onAnswerClick={() => setIsModalOpen(false)}
-                className={"button-eingang"}
               />
             </div>
           </div>
@@ -131,14 +134,16 @@ export const BestandTabelle = ({ bestand, setBestand, lokId }) => {
               {currentItem.lagerplatz.tablar}
             </p>
             <input
-              text="text"
+              type="text"
               placeholder="Ziel-Regal"
-              onChange={(e) => setZuRegal(e.target.value)}
+              value={zuRegal}
+              onChange={(e) => setZuRegal(e.target.value.toUpperCase())}
             />
             <input
-              text="text"
+              type="text"
               placeholder="Ziel-Tablar"
-              onChange={(e) => setZuTablar(e.target.value)}
+              value={zuTablar}
+              onChange={(e) => setZuTablar(e.target.value.toUpperCase())}
             />
             <input
               type="number"
@@ -146,11 +151,14 @@ export const BestandTabelle = ({ bestand, setBestand, lokId }) => {
               onChange={(e) => setNewMenge(e.target.value)}
             />
             <div className="modul-buttons">
-              <Button text="Speichern" onAnswerClick={saveChanges} />
+              <Button
+                text="Speichern"
+                onAnswerClick={saveChanges}
+                className={"button-transfer"}
+              />
               <Button
                 text="Abbrechen"
                 onAnswerClick={() => setIsModalOpen(false)}
-                className={"button-transfer"}
               />
             </div>
           </div>
