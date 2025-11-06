@@ -106,95 +106,137 @@
 }
 
 /* ===============================
-   Lok- / Bestand-Karten
+   Lok- / Bestand-Karten Container
    =============================== */
-.lok-container {
+.lok-bestand-container {
   display: flex;
   gap: 2rem;
-  margin: 1rem 0;
+  flex-wrap: wrap; /* sorgt dafür, dass bei kleinen Bildschirmen Karten umbrechen */
+  align-items: stretch; /* gleiche Höhe der Karten */
+  margin-top: 2rem; /* Abstand zur Suchseite */
+  justify-content: center; /* zentriert die Karten */
+}
+
+/* ===============================
+   Lok- / Bestand-Karten Container
+   =============================== */
+.lok-bestand-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-top: 2rem;
+  justify-content: center;
 }
 
 .lok-card,
 .bestand-card {
+  flex: 1 1 0; /* beide Karten gleich breit */
+  min-width: 300px;
+  max-width: 100%; /* damit keine Karte größer als Container wird */
+  display: flex;
+  flex-direction: column;
   border: 1px solid #555;
   padding: 1rem;
-  width: 300px;
   border-radius: 8px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   background-color: #000000;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Überschriften */
 .lok-card h3,
 .bestand-card h3 {
   margin-top: 0;
 }
 
-.bestand-table {
-  border-collapse: collapse;
-  min-width: 400px;
-  flex: 1;
+/* ===============================
+   Lok- / Bestand Container
+   =============================== */
+.lok-bestand-container {
+  display: flex;
+  flex-wrap: wrap; /* bei kleinen Bildschirmen umbrechen */
+  gap: 2rem;
+  justify-content: center; /* zentriert die Inhalte */
+  align-items: flex-start; /* gleiche Ausrichtung oben */
+  margin-top: 2rem;
 }
 
-.bestand-table th,
-.bestand-table td {
+/* ===============================
+   Lok-Card
+   =============================== */
+.lok-card {
+  flex: 1 1 300px; /* flexibel, mind. 300px */
+  max-width: 400px;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #000000;
+  color: #fdfdfd;
   border: 1px solid #555;
-  padding: 0.5rem 1rem;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================
+   Bestand-Card
+   =============================== */
+.bestand-card {
+  flex: 1 1 300px;
+  max-width: 600px;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #000000;
+  color: #fdfdfd;
+  border: 1px solid #555;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================
+   Tabelle Bestand
+   =============================== */
+.bestand-tabelle {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bestand-tabelle th,
+.bestand-tabelle td {
+  border: 1px solid #555;
+  padding: 0.5rem 0.75rem;
   text-align: left;
 }
 
-.bestand-table th {
+.bestand-tabelle th {
   background-color: #222;
 }
 
-/* ===============================
-   Buttons Bestand / Aktionen
-   =============================== */
-.modal-buttons button:first-child,
-.modul-buttons button:first-child {
-  background-color: #4caf50; /* Speichern: grün */
-  color: white;
-}
-.modal-buttons button:last-child,
-.modul-buttons button:last-child {
-  background-color: #777; /* Abbrechen: grau */
-  color: white;
-}
-.modal-buttons button:last-child:hover,
-.modul-buttons button:last-child:hover {
-  background-color: #555;
-}
-.bestand-tabelle button {
-  margin: 2px 4px;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s ease-in-out;
-}
-.bestand-tabelle button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-} /* Spezifisch für die Aktionen */
-.button-eingang {
-  background-color: #4caf50; /* Grün */
-  color: white;
-}
-.button-eingang:hover {
-  background-color: #43a047;
-}
-.button-transfer {
-  background-color: #2196f3; /* Blau */
-  color: white;
-}
-.button-transfer:hover {
-  background-color: #1976d2;
+/* Buttons untereinander in der Tabelle */
+.bestand-tabelle td > button,
+.bestand-tabelle td > div > button {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 
-/* ===============================
-   Modal
-   =============================== */
+/* Modal Buttons vertikal */
+.modal-buttons,
+.modul-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* Inputs im Modal */
+.modal input {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #1a1a1a;
+  color: #fdfdfd;
+}
+
+/* Modal Hintergrund */
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -213,25 +255,57 @@
   border-radius: 12px;
   width: 350px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-  animation: fadeIn 0.2s ease-in-out;
 }
 
-.modal h2 {
-  margin-bottom: 12px;
-  font-size: 1.3rem;
-  color: #fdfdfd;
+/* ===============================
+   Buttons spezifisch
+   =============================== */
+.button-eingang {
+  background-color: #4caf50;
+  color: white;
 }
 
-.modal input {
-  width: 100%;
-  padding: 8px 10px;
-  margin: 6px 0;
-  border: 1px solid #555;
-  border-radius: 6px;
-  background-color: #1a1a1a;
-  color: #fdfdfd;
+.button-eingang:hover {
+  background-color: #43a047;
 }
 
+.button-transfer {
+  background-color: #2196f3;
+  color: white;
+}
+
+.button-transfer:hover {
+  background-color: #1976d2;
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  .lok-card,
+  .bestand-card {
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #ddd;
+  }
+
+  .bestand-tabelle th {
+    background-color: #eaeaea;
+  }
+
+  .bestand-tabelle td {
+    color: #111;
+  }
+
+  .modal {
+    background-color: #fff;
+    color: #111;
+  }
+
+  .modal input {
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #ccc;
+  }
+}
 /* Filter anwenden Button */
 .apply-filter-button {
   display: block;
@@ -541,4 +615,12 @@
   grid-column: span 2; /* Button über beide Spalten */
   text-align: center;
   margin-top: 1rem;
+}
+
+.lok-message {
+  color: #00cc66; /* schönes Grün */
+  font-size: 1.3rem; /* größerer Text */
+  font-weight: bold; /* dicker Text */
+  margin-top: 1rem;
+  text-align: center; /* zentriert, wirkt sauberer */
 }

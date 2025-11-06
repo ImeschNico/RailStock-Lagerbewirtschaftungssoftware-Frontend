@@ -2,27 +2,18 @@ import React, { useState } from "react";
 import { createLok } from "../data/api";
 import { Button } from "./button";
 
-export const LokErstellen = () => {
-  const [artNumber, setArtNumber] = useState("");
-  const [bezeichnung, setBezeichnung] = useState("");
-  const [typ, setTyp] = useState("");
-  const [modell, setModell] = useState("");
-  const [stromart, setStromart] = useState("");
-  const [spur, setSpur] = useState("");
-  const [epoche, setEpoche] = useState("");
-  const [betriebsart, setBetriebsart] = useState("");
-  const [herstellerName, setHerstellerName] = useState("");
-
+export const LokErstellen = ({ initialData = {} }) => {
+  const [message, setMessage] = useState("");
   const [formData, setFormData] = useState({
-    artNumber,
-    bezeichnung,
-    typ,
-    modell,
-    stromart,
-    spur,
-    epoche,
-    betriebsart,
-    herstellerName,
+    artNumber: initialData.artNumber || "",
+    bezeichnung: initialData.bezeichnung || "",
+    typ: initialData.typ || "",
+    modell: initialData.modell || "",
+    stromart: initialData.stromart || "",
+    spur: initialData.spur || "",
+    epoche: initialData.epoche || "",
+    betriebsart: initialData.betriebsart || "",
+    herstellerName: initialData.herstellerName || "",
   });
 
   const labelMap = {
@@ -46,11 +37,13 @@ export const LokErstellen = () => {
     e.preventDefault();
     console.log("Gesendete Daten:", formData);
     createLok(formData);
+    setMessage(`Lok ${formData.artNumber} erfolgreich erstellt`);
   };
 
   return (
     <form onSubmit={handleSubmit} className="lok-form">
       <h2 className="lok-form-title">Neue Lok erstellen:</h2>
+      {message && <p className="lok-message">{message}</p>}
       {Object.entries(formData).map(([key, value]) => (
         <div key={key} className="lok-form-group">
           <label className="lok-label">{labelMap[key]}</label>
