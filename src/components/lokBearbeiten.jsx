@@ -30,7 +30,9 @@ export const LokBearbeiten = () => {
       <h2>Lok Bearbeiten/Duplizieren:</h2>
       <SearchField label="Artikel Nummer" onSearch={setArtNumber} />
 
-      {!editOpen && <LokDetails artNumber={artNumber} onLoad={handleLoad} />}
+      {!editOpen && (
+        <LokDetails artNumber={artNumber} onLoad={handleLoad} isEdit={true} />
+      )}
 
       {detailsOpen && !editOpen && (
         <Button text="Bearbeiten" onAnswerClick={handleEdit} />

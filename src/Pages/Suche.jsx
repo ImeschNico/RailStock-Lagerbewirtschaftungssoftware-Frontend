@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SearchField } from "../components/SearchField";
 import "../css/Style.css";
 import { FilterListe } from "../components/filterListe";
 import { BestandListe } from "../components/bestandListe";
 import { Hersteller } from "../components/hersteller";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Filter } from "../components/filter";
 
 export const Suche = () => {
   const navigate = useNavigate();

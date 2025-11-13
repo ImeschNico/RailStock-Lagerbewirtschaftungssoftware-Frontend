@@ -117,18 +117,6 @@
   justify-content: center; /* zentriert die Karten */
 }
 
-/* ===============================
-   Lok- / Bestand-Karten Container
-   =============================== */
-.lok-bestand-container {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  align-items: stretch;
-  margin-top: 2rem;
-  justify-content: center;
-}
-
 .lok-card,
 .bestand-card {
   flex: 1 1 0; /* beide Karten gleich breit */
@@ -629,4 +617,127 @@
   font-size: 1.5rem;
   font-weight: "bold";
   color: #00cc66;
+}
+
+.lok-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start; /* linksbündig oder center */
+}
+
+.lok-card {
+  flex: 0 0 calc(20% - 1rem); /* 5 Karten nebeneinander */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #000;
+  color: #fdfdfd;
+  padding: 1rem;
+  box-sizing: border-box; /* wichtig, damit Padding die Breite nicht überschreitet */
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #111;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown label {
+  margin-bottom: 0.25rem;
+  color: #fdfdfd;
+}
+
+.dropdown select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #1a1a1a;
+  color: #fdfdfd;
+}
+
+/* ========================================
+   Lok-Card im Dupli / Bearbeiten-Modus
+   ======================================== */
+.lok-container-dupli {
+  display: flex;
+  justify-content: center; /* horizontal mittig */
+  align-items: center; /* vertikal mittig */
+  min-height: 60vh; /* optisch mittig auf der Seite */
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  gap: 1rem;
+}
+
+.lok-container-dupli .lok-card {
+  flex: 0 1 420px;
+  max-width: 90%;
+  border-radius: 12px;
+  border: 1px solid #555;
+  background-color: #000;
+  color: #fdfdfd;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lok-container-dupli .lok-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Für kleine Bildschirme */
+@media (max-width: 600px) {
+  .lok-container-dupli {
+    min-height: auto;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .lok-container-dupli .lok-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* ===============================
+   LokDetails im Edit-/Dupli-Modus
+   =============================== */
+.lok-container.edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  gap: 1rem;
+}
+
+.lok-container.edit .lok-card {
+  flex: 0 1 420px;
+  max-width: 90%;
+  border-radius: 12px;
+  border: 1px solid #555;
+  background-color: #000;
+  color: #fdfdfd;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lok-container.edit .lok-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }

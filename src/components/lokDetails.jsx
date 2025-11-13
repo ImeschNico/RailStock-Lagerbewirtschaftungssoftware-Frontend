@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { fetchBestandByArtNumber } from "../data/api";
 
-export const LokDetails = ({ artNumber, onLoad }) => {
+export const LokDetails = ({ artNumber, onLoad, isEdit = false }) => {
   const [bestand, setBestand] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -33,7 +33,7 @@ export const LokDetails = ({ artNumber, onLoad }) => {
 
   const lokData = bestand[0].lok;
   return (
-    <div className="lok-container">
+    <div className={`lok-container ${isEdit ? "edit" : ""}`}>
       <div className="lok-card">
         <h3>
           <strong>Hersteller:</strong> {lokData.herstellerName}

@@ -36,14 +36,6 @@ export const FilterListe = () => {
         setHersteller(value);
         params.herstellerName = value;
         break;
-      case "artNumber":
-        setArtNumber(value);
-        params.artNumber = value;
-        break;
-      case "bezeichnung":
-        setBezeichnung(value);
-        params.bezeichnung = value;
-        break;
       default:
         break;
     }
@@ -67,14 +59,6 @@ export const FilterListe = () => {
         <SearchField
           label="Hersteller"
           onSearch={handleSearchFieldChange("hersteller")}
-        />
-        <SearchField
-          label="Artikel Nummer"
-          onSearch={handleSearchFieldChange("artNumber")}
-        />
-        <SearchField
-          label="Modellbezeichnung z.B BR102"
-          onSearch={handleSearchFieldChange("bezeichnung")}
         />
       </div>
 

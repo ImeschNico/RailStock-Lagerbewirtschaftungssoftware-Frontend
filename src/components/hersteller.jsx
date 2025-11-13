@@ -7,6 +7,7 @@ import lemacoLogo from "../assets/bild_lemaco.png";
 import metropolitanLogo from "../assets/bild_metropolitan.png";
 import rivarossiLogo from "../assets/bild_rivarossi.png";
 import { Button } from "./button";
+import { Filter } from "./filter";
 
 export const Hersteller = ({ onSelectedHersteller }) => {
   const [hersteller, setHersteller] = useState([]);
